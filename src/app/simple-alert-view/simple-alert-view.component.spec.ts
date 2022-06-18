@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { SimpleAlertViewComponent } from './simple-alert-view.component';
+import { SimpleAlertViewComponent } from "./simple-alert-view.component";
 
-describe('SimpleAlertViewComponent', () => {
+describe("SimpleAlertViewComponent", () => {
   let component: SimpleAlertViewComponent;
   let fixture: ComponentFixture<SimpleAlertViewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SimpleAlertViewComponent ]
-    })
-    .compileComponents();
+      declarations: [SimpleAlertViewComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('SimpleAlertViewComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

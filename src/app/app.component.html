@@ -1,27 +1,24 @@
 <div>
-
   <app-tabs>
     <app-tab title="Timers">
-      <app-timer *ngFor="let timer of timers" init="{{timer}}" (onComplete)="showEndTimerAlert()"></app-timer>
+      <app-timer
+        *ngFor="let timer of timers"
+        init="{{ timer }}"
+        (onComplete)="showEndTimerAlert()"
+      ></app-timer>
       <button class="add" (click)="showAddTimer()">+</button>
     </app-tab>
-    <app-tab title="Crono">
-      Crono. Not available.
-    </app-tab>
-    <app-tab title="Alarm">
-      Alarm. Not available.
-    </app-tab>
+    <app-tab title="Crono"> Crono. Not available. </app-tab>
+    <app-tab title="Alarm"> Alarm. Not available. </app-tab>
   </app-tabs>
 
-
   <app-alert-view [hidden]="!isAddTimerVisible">
-    <div header>Add timer</div>    
+    <div header>Add timer</div>
     <label>Set the number of seconds for your timer</label>
-    <input [(ngModel)]="time" type="number" #timerInput>
+    <input [(ngModel)]="time" type="number" #timerInput />
     <button (click)="hideAddTimer()" class="cancel-button">Cancel</button>
     <button (click)="submitAddTimer()">Ok</button>
   </app-alert-view>
-  
+
   <ng-container #alert></ng-container>
-  
 </div>

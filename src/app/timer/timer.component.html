@@ -5,8 +5,9 @@
 
   <div class="buttons">
     <button *ngIf="timer.paused" (click)="timer.toogleCountdown()">Play</button>
-    <button *ngIf="!timer.paused" (click)="timer.toogleCountdown()">Pause</button>
+    <button *ngIf="!timer.paused" (click)="timer.toogleCountdown()">
+      Pause
+    </button>
     <button (click)="timer.restartCountdown()">RESTART</button>
   </div>
-  
 </div>
