@@ -4,7 +4,6 @@ import { TabComponent } from 'app/tab/tab.component';
 
 import { Tab } from '../tab/tab.interface';
 
-
 @Component({
 	selector: 'app-tabs',
 	templateUrl: './tabs.component.html',
@@ -14,13 +13,7 @@ export class TabsComponent implements AfterContentInit, OnDestroy {
 	@ContentChildren(TabComponent) public tabs: QueryList<TabComponent>;
 	private tabClickSubscriptions: any[] = [];
 
-	ngOnDestroy() {
-		if (this.tabClickSubscriptions) {
-			this.tabClickSubscriptions.forEach((item) => item.unsubscribe());
-		}
-	}
-
-	ngAfterContentInit() {
+	ngAfterContentInit(): void {
 		console.log(this.tabs);
 		this.tabs.forEach((tab) => {
 			let subscription = tab.onClick.subscribe(() => {
@@ -31,8 +24,14 @@ export class TabsComponent implements AfterContentInit, OnDestroy {
 		this.selectTab(this.tabs.first);
 	}
 
-	selectTab(tab: Tab) {
+	selectTab(tab: Tab): void {
 		this.tabs.forEach((tab) => (tab.isActive = false));
 		tab.isActive = true;
+	}
+
+	ngOnDestroy(): void {
+		if (this.tabClickSubscriptions) {
+			this.tabClickSubscriptions.forEach((item) => item.unsubscribe());
+		}
 	}
 }

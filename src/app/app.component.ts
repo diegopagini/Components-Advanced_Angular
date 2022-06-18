@@ -1,6 +1,5 @@
 /** @format */
 import {
-  AfterContentInit,
   AfterViewInit,
   Component,
   ComponentFactoryResolver,
@@ -12,13 +11,12 @@ import {
 } from '@angular/core';
 import { SimpleAlertViewComponent } from 'app/simple-alert-view/simple-alert-view.component';
 
-
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements AfterContentInit, AfterViewInit {
+export class AppComponent implements AfterViewInit {
 	public isAddTimerVisible: boolean = false;
 	public time: number = 0;
 	public timers: Array<number> = [];
@@ -45,8 +43,6 @@ export class AppComponent implements AfterContentInit, AfterViewInit {
 		);
 		this.renderer.addClass(this.timeInput.nativeElement, 'time-in');
 	}
-
-	ngAfterContentInit() {}
 
 	logCountdownEnd() {
 		console.log('the countdown has finished');

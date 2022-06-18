@@ -1,11 +1,11 @@
 /** @format */
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
 	selector: 'app-simple-alert-view',
 	templateUrl: './simple-alert-view.component.html',
 	styleUrls: ['./simple-alert-view.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SimpleAlertViewComponent {
 	@Output() onDismiss: EventEmitter<void> = new EventEmitter<void>();

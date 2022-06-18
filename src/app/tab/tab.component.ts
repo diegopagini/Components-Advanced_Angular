@@ -1,13 +1,13 @@
 /** @format */
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { Tab } from './tab.interface';
-
 
 @Component({
 	selector: 'app-tab',
 	templateUrl: './tab.component.html',
 	styleUrls: ['./tab.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TabComponent implements Tab {
 	@Output() onClick: EventEmitter<void> = new EventEmitter<void>();
