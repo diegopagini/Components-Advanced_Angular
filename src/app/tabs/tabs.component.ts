@@ -1,39 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 import { TabComponent } from "app/tab/tab.component";
 import { Tab } from "../tab/tab.interface";
 
-
 @Component({
-  selector: 'app-tabs',
-  templateUrl: './tabs.component.html',
-  styleUrls: ['./tabs.component.scss']
+  selector: "app-tabs",
+  templateUrl: "./tabs.component.html",
+  styleUrls: ["./tabs.component.scss"],
 })
 export class TabsComponent implements OnInit {
+  public tabs: Tab[] = [];
 
-  public tabs:Tab[] = [];
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
-    this.addTab({isActive:false, title:"tab 1"});
-    this.addTab({isActive:false, title:"tab 2"});
-    this.addTab({isActive:false, title:"tab 3"});
-    this.addTab({isActive:false, title:"tab 4"});
+    this.addTab({ isActive: false, title: "tab 1" });
+    this.addTab({ isActive: false, title: "tab 2" });
+    this.addTab({ isActive: false, title: "tab 3" });
+    this.addTab({ isActive: false, title: "tab 4" });
   }
 
-  addTab(tab:Tab){
+  addTab(tab: Tab) {
     if (this.tabs.length === 0) {
       tab.isActive = true;
     }
     this.tabs.push(tab);
   }
 
-  selectTab(tab:Tab) {
-    for (let tab of this.tabs){
+  selectTab(tab: Tab) {
+    for (let tab of this.tabs) {
       tab.isActive = false;
     }
     tab.isActive = true;
   }
-  
-
 }

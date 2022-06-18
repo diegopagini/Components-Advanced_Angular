@@ -2,7 +2,7 @@
 
 This project is the sample code of the Course "Angular Components for beginners".
 
->Note: This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+> Note: This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
 ## How to install
 

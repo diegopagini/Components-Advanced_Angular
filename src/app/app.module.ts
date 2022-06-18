@@ -1,18 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { HttpModule } from "@angular/http";
 
-import { AppComponent } from './app.component';
+import { AppComponent } from "./app.component";
 import { ProgressBarComponent } from "./progress-bar/progress-bar.component";
 import { DisplayComponent } from "./display/display.component";
-import { TimerComponent } from './timer/timer.component';
-import { AlertViewComponent } from './alert-view/alert-view.component';
-import { TabsComponent } from './tabs/tabs.component';
-import { TabComponent } from './tab/tab.component';
-import { SimpleAlertViewComponent } from './simple-alert-view/simple-alert-view.component';
-
-
+import { TimerComponent } from "./timer/timer.component";
+import { AlertViewComponent } from "./alert-view/alert-view.component";
+import { TabsComponent } from "./tabs/tabs.component";
+import { TabComponent } from "./tab/tab.component";
+import { SimpleAlertViewComponent } from "./simple-alert-view/simple-alert-view.component";
 
 @NgModule({
   declarations: [
@@ -23,14 +21,10 @@ import { SimpleAlertViewComponent } from './simple-alert-view/simple-alert-view.
     AlertViewComponent,
     TabsComponent,
     TabComponent,
-    SimpleAlertViewComponent
+    SimpleAlertViewComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
-  ],
+  imports: [BrowserModule, FormsModule, HttpModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
