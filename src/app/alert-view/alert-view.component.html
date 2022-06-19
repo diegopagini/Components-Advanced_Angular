@@ -1,17 +1,23 @@
+<!-- @format -->
+
 <div>
-  <div class="background"></div>
+	<div class="background"></div>
 
-  <div class="card">
-    <div class="header">
-      <ng-content select="[header]"></ng-content>
-    </div>
+	<div class="card">
+		<div class="header">
+			<!-- "select" se utiliza para darle un slot al contendio que se pase que tenga el atributo "header" -->
+			<ng-content select="[header]"></ng-content>
+		</div>
 
-    <div class="message">
-      <ng-content></ng-content>
-    </div>
+		<div class="message">
+			<ng-content></ng-content>
+		</div>
 
-    <div class="footer">
-      <ng-content select="button"></ng-content>
-    </div>
-  </div>
+		<div class="footer">
+			<!-- "select" se utiliza para darle un slot al contendio que se pase que tenga la clase "button" -->
+			<ng-content select=".button"></ng-content>
+			<!-- "select" se utiliza para darle un slot al contendio que se pase que tenga el tag <button></button> -->
+			<ng-content select="button"></ng-content>
+		</div>
+	</div>
 </div>
