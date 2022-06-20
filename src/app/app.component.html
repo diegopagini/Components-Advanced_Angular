@@ -1,24 +1,43 @@
+<!-- @format -->
+
 <div>
-  <app-tabs>
-    <app-tab title="Timers">
-      <app-timer
-        *ngFor="let timer of timers"
-        init="{{ timer }}"
-        (onComplete)="showEndTimerAlert()"
-      ></app-timer>
-      <button class="add" (click)="showAddTimer()">+</button>
-    </app-tab>
-    <app-tab title="Crono"> Crono. Not available. </app-tab>
-    <app-tab title="Alarm"> Alarm. Not available. </app-tab>
-  </app-tabs>
+	<app-tabs>
+		<app-tab title="Timers">
+			<app-timer
+				*ngFor="let timer of timers"
+				init="{{ timer }}"
+				(onComplete)="showEndTimerAlert()"
+			></app-timer>
+			<button class="add" (click)="showAddTimer()">+</button>
+		</app-tab>
+		<app-tab title="Crono"> Crono. Not available. </app-tab>
+		<app-tab title="Alarm"> Alarm. Not available. </app-tab>
+	</app-tabs>
 
-  <app-alert-view [hidden]="!isAddTimerVisible">
-    <div header>Add timer</div>
-    <label>Set the number of seconds for your timer</label>
-    <input [(ngModel)]="time" type="number" #timerInput />
-    <button (click)="hideAddTimer()" class="cancel-button">Cancel</button>
-    <button (click)="submitAddTimer()">Ok</button>
-  </app-alert-view>
+	<app-alert-view [hidden]="!isAddTimerVisible">
+		<div header>Add timer</div>
+		<label>Set the number of seconds for your timer</label>
+		<input [(ngModel)]="time" type="number" #timerInput />
+		<button (click)="hideAddTimer()" class="cancel-button">Cancel</button>
+		<button (click)="submitAddTimer()">Ok</button>
+	</app-alert-view>
 
-  <ng-container #alert></ng-container>
+	<ng-container #alert></ng-container>
+
+	<!-- timeEndTemplate es el nombre de la plantilla que necesitamos para instanciarla -->
+	<ng-template #timeEndTemplate let-message let-title>
+		<!-- let-message y let-tittle son las variables que vamos a mostrar en el componente -->
+		<app-simple-alert-view [title]="title" [message]="message">
+		</app-simple-alert-view>
+	</ng-template>
+
+	<!-- para llamar a nuestro template es necesario utilizar la directiva ngTemplateOutlet e inidicarle su nombre -->
+	<ng-container
+		[ngTemplateOutlet]="timeEndTemplate"
+		[ngTemplateOutletContext]="{
+			title: 'Game Over',
+			message: 'some random text'
+		}"
+	></ng-container>
+	<!-- Y para declarar sus variables es necesario utilizar la directiva ngTemplateOutletContext con un objecto y sus propiedades -->
 </div>
