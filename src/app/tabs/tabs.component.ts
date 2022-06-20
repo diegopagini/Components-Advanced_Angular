@@ -10,6 +10,8 @@ import { Tab } from '../tab/tab.interface';
 	styleUrls: ['./tabs.component.scss'],
 })
 export class TabsComponent implements AfterContentInit, OnDestroy {
+	// @ContentChild(TabComponent) "ContenChild" permite acceder al componente que se esté utilizando como hijo de este
+	// utilizando que se esté mostrando por el content projection. (ng-content)
 	@ContentChildren(TabComponent) public tabs: QueryList<TabComponent>;
 	private tabClickSubscriptions: any[] = [];
 
