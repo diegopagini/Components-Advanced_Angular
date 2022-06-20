@@ -27,7 +27,8 @@ export class AppComponent implements AfterViewInit {
 	alertContainer: ViewContainerRef;
 
 	constructor(
-		private renderer: Renderer2,
+		private renderer: Renderer2, // Renderer2 funciona como nativeElement pero para cualquier plataforma y no solo el browser 
+		// por ejemplo para hacer SSR.
 		private resolver: ComponentFactoryResolver
 	) {
 		this.timers = [3, 20, 185];
